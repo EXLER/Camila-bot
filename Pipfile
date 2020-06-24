@@ -10,6 +10,11 @@ pylint = "*"
 [packages]
 "discord.py" = "*"
 aiosqlite3 = "*"
+youtube-dl = "*"
+pynacl = "*"
 
 [requires]
 python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true

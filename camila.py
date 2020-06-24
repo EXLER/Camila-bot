@@ -110,11 +110,13 @@ class Camila(commands.Bot):
                 f"{author.mention} Unexpected exception occurred while using the command: `{command}`."
             )
             log.warn(
-                f"Unexpected exception occured while using the `{command}`: {exc.text}"
+                f"Unexpected exception occured while using the `{command}` command: {exc}"
             )
 
     async def on_error(self, event_method, *args, **kwargs):
-        log.error(f"Error in event: {event_method}")
+        log.error(f"Error in event: {event_method}\n")
+        msg = format_exc()
+        log.error(f"Error message:\n{msg}")
 
 
 def run_bot() -> int:

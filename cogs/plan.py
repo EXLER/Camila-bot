@@ -4,7 +4,7 @@ import urllib
 import discord
 from discord.ext import commands
 
-from utils import log
+from utils import log, web
 
 
 class Plan(commands.Cog):
@@ -17,8 +17,7 @@ class Plan(commands.Cog):
 
     @commands.command()
     async def plan(self, ctx):
-        """Display the lesson plan for given group.
-           usage: !plan"""
+        """Display the lesson plan for given group"""
         file = None
         embed = discord.Embed()
         for role in ctx.message.author.roles:
@@ -59,13 +58,18 @@ class Plan(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def changeplan(self, ctx, group: str, link: str):
         """Change the lesson plan for given group. Must have plan image attached.
-           usage: !changeplan <Informatyka | Automatyka>"""
+           choices: Informatyka, Automatyka"""
         group = group.lower()
         if group != "informatyka" and group != "automatyka":
             await ctx.send("Wybierz jedną z możliwości: informatyka, automatyka")
             return
 
+        if not web.url_validator(link):
+            await ctx.send("Podana wartość nie jest linkiem!")
+            return
+
         urllib.request.urlretrieve(link, f"data/{group}.png")
+        await ctx.send("Nowy plan ustawiony!")
 
 
 def setup(bot):
