@@ -17,11 +17,13 @@ class Randoms(commands.Cog):
 
     @commands.command()
     async def randomrange(self, ctx, lower: int, upper: int):
+        """Choose a random integer between given lower and upper bounds"""
         number = random.randint(lower, upper)
         await ctx.send(f"🎲 Your random number between {lower} and {upper} is: {number}")
 
     @commands.command()
     async def randommember(self, ctx, role: discord.Role):
+        """Choose a random member of given Discord role"""
         member = random.choice(role.members)
         await ctx.send(f"🎲 The person chosen for this is: {member}")
 
