@@ -138,7 +138,8 @@ def run_bot() -> int:
         branch = "<unknown>"
 
     bot = Camila(
-        (".", "!"), description="Camila, a calendar and task managment Discord bot"
+        (".", "!"),
+        description="Camila, an extensible Discord bot with handful of functionalities for every student!",
     )
     bot.help_command = commands.DefaultHelpCommand(dm_help=None)
     log.info(f"Starting Camila on commit {commit} on branch {branch}")
