@@ -17,6 +17,14 @@ $ sudo ./setup.sh
 
 ## Available commands
 ```
+Assistance:
+  format       Format message of given ID with given syntax.
+Calendar:
+  allscheduled Display all scheduled events in the database
+  deleteevent  Delete an existing event.
+  schedule     Schedule a new event.
+  today        Display events scheduled for today
+  week         Display events scheduled for the next 7 days
 Music:
   join         Join the room occupied by the person invoking the command.
   leave        Leave the current voice channel
@@ -25,8 +33,8 @@ Music:
   skip         Skip the current playing video
   unpause      Unpause the currently paused video
 Plan:
-  changeplan   Change the lesson plan for given group. Must have plan image a...
-  plan         Display the lesson plan for given group
+  changeplan   Change the lesson plan for a given group.
+  plan         Display the lesson plan for the group represented by user's role
 Randoms:
   randommember Choose a random member of given Discord role
   randomrange  Choose a random integer between given lower and upper bounds

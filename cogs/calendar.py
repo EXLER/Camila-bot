@@ -95,7 +95,7 @@ class Calendar(commands.Cog):
 
     @commands.command()
     async def today(self, ctx):
-        """Display all scheduled events in the database"""
+        """Display events scheduled for today"""
         async with self.bot.db_holder.db.cursor() as cur:
             try:
                 await cur.execute(f"SELECT * FROM events")
@@ -119,7 +119,7 @@ class Calendar(commands.Cog):
 
     @commands.command()
     async def week(self, ctx):
-        """Display all scheduled events in the database"""
+        """Display events scheduled for the next 7 days"""
         async with self.bot.db_holder.db.cursor() as cur:
             try:
                 await cur.execute(f"SELECT * FROM events")
