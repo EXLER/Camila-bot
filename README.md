@@ -10,9 +10,9 @@
 ## Usage
 * Create a new bot on [Discord Developer Portal](https://discord.com/developers/applications) and generate a bot token
 * Rename `.env.example` to `.env` and fill out the empty fields
-* Run the installation script to setup dependencies and install `pm2` for process management
+* Run the installation script to setup dependencies and `pm2` for process management
 ```bash
-$ sudo scripts/setup.sh
+$ sudo scripts/setup-pm2.sh
 ```
 
 ## Available commands

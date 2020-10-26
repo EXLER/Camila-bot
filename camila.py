@@ -150,7 +150,7 @@ def run_bot() -> int:
         (".", "!"),
         description="Camila, an extensible Discord bot with handful of functionalities for every student!",
     )
-    bot.help_command = commands.DefaultHelpCommand(dm_help=None)
+    bot.help_command = commands.DefaultHelpCommand(dm_help=False)
     log.info(f"Starting Camila on commit {commit} on branch {branch}")
     bot.load_cogs()
     try:
