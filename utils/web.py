@@ -1,7 +1,7 @@
 import os
 import uuid
 
-import youtube_dl
+import youtube_dlc
 
 from utils import log, validators
 
@@ -26,7 +26,7 @@ def youtube_download(query) -> dict:
         ),
     }
 
-    with youtube_dl.YoutubeDL(ytdl_opts) as ytdl:
+    with youtube_dlc.YoutubeDL(ytdl_opts) as ytdl:
         log.debug(f"Trying to download using query: {query}")
         if validators.url_validator(query):
             result = ytdl.extract_info(query)
