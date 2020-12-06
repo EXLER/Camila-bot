@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y \
     build-essential \
     libffi-dev \
-    openssl-dev \
+    libssl-dev \
     ffmpeg 
 
 RUN mkdir /src
